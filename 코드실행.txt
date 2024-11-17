@@ -1,0 +1,24 @@
+activate openmmlab
+cd C:/Users/coden/OneDrive/바탕 화면/Building/mmsegmentation
+wandb login f2ccda00c147de3676604428789329530918c2ee
+
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_1024x1024-satellite_(0~100].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_1024x1024-satellite_(0~20].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_1024x1024-satellite_(0~15].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_1024x1024-satellite_(0~10].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_1024x1024-satellite_(0~5].py
+
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_1024x1024-satellite_[0~100].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_1024x1024-satellite_[0~20].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_1024x1024-satellite_[0~15].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_1024x1024-satellite_[0~10].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_1024x1024-satellite_[0~5].py
+
+
+===========================================================================================================
+
+
+
+activate openmmlab
+cd C:/Users/coden/OneDrive/바탕 화면/Building/mmsegmentation
+python tools/test.py work_dirs/pidnet-s_2xb6-120k_1024x1024-satellite/pidnet-s_2xb6-120k_1024x1024-satellite.py work_dirs/pidnet-s_2xb6-120k_1024x1024-satellite/iter_100000.pth

@@ -1,0 +1,29 @@
+activate openmmlab
+cd C:\python_code\Segmentation_project\mmsegmentation
+wandb login f2ccda00c147de3676604428789329530918c2ee
+
+#건물, 도로 (단일 클래스, 이진 분류)
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_buildings.py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_roads.py
+
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_(0~100].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_(0~20].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_(0~15].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_(0~10].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_(0~5].py
+
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_[0~100].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_[0~20].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_[0~15].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_[0~10].py
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-satellite_[0~5].py
+
+#로드마크 (다중 클래스, 6개 클래스)
+python tools/train.py configs/pidnet/pidnet-s_2xb6-120k_512x512-roadmark.py 
+
+
+===========================================================================================================
+
+activate openmmlab
+cd C:\python_code\Segmentation_project\mmsegmentation
+python tools/test.py work_dirs/pidnet-s_2xb6-120k_512x512-satellite_(0~20]/pidnet-s_2xb6-120k_512x512-satellite_(0~20].py work_dirs/pidnet-s_2xb6-120k_512x512-satellite_(0~20]/iter_500000.pth
